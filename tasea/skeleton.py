@@ -261,6 +261,7 @@ def main(args):
     if args.view_shapelet:
         t = PlottingThread(list_multivariate_timeseries, list_all_shapelets=list_all_shapelets)
         t.start()
+        t.join()
         return
 
     if not args.skip2:
@@ -289,6 +290,7 @@ def main(args):
     if args.view_rule:
         t2 = PlottingThread(list_multivariate_timeseries, list_all_sequences=list_all_sequences)
         t2.start()
+        t2.join()
         return
     # The TAQE algorithm
     # print("Starting the TAQE algorithm...")
